@@ -5,4 +5,4 @@ permalink: /what/
 ---
 
 
-This is the website/blog for the podcast **Made for People** hosted by **Surya Midha**. Nothing to see here. Move along! Read something! Do something with your life for god's sake!
+This is the website/blog for the podcast **Made for People** hosted by **Surya Midha**. Nothing to see here. Move along! Read something! Do something with your life for god's sake! Perhaps even listen to our [podcast](https://suryamidha.github.io/podcast/)!
