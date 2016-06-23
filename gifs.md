@@ -6,11 +6,8 @@ permalink: /gifs/
 
 The Internet's most expansive (probably not true) selection of gifs categorized. 
 
-## Animals
+# Animals
 "But why male models?"
-### Dogs
+## Dogs
 "But why male models?"
-#### Hyper
-"But why male models?"
-
 ![animals/dogs/hyper](http://i.imgur.com/vYRQxQa.gifv)
