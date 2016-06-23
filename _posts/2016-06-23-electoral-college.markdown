@@ -1,9 +1,9 @@
 ---
 layout: post
 title:  "Electoral College"
-date:   2016-06-23 12:25:00 -0700
+date:   2016-06-23
 ---
-by Surya Midha
+by **Surya Midha**
 
 ## Introduction
 So, there's been one man in the news lately, and that's been Donald Trump. He seems to have swept the polls in states that have already voted. And in China, their state owned newspaper used Donald Trump as a example that democracy doesn't work. Regardless of what you think of the man, from the polls we've seen, the majority of republicans don't like Donald Trump. He's wining states with 30, maybe 40 percent of the vote. Which begs the questions, **is our system of democracy broken?**
