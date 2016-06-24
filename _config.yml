@@ -10,7 +10,7 @@ title: Made For People
 email: suryamidha@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   This is the official website/blog for the podcast Made for People hosted by Surya Midha
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/madeforpeople" # the subpath of your site, e.g. /blog
 url: "http://yourdomain.com" # the base hostname & protocol for your site
 twitter_username: suryamidha
 github_username:  suryamidha
