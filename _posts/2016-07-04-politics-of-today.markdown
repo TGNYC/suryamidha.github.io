@@ -12,6 +12,7 @@ This podcast is trying out a new segment: Politics of Today. Here we ask the kid
 ## Issues
 
 Talked about points included:
+
 * Presidential Age
 * Bernie's appeal to youth
 * Hillary's and Trump's untrustworthy characteristics
