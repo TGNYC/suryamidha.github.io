@@ -1,3 +1,4 @@
+---
 layout: post
 title:  "Politics Of Today"
 date:   2016-07-04
