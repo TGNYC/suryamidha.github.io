@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- common.css -->
+  <style>* {-webkit-tap-highlight-color: rgba(0,0,0,0);}html {-webkit-text-size-adjust: none;}body {font-family: Arial, Helvetica, sans-serif;margin: 0;color: #333;word-wrap: break-word;}h1, h2, h3, h4, h5, h6 {line-height: 1.1;}img {max-width: 100% !important;}blockquote {margin: 0;padding: 0 15px;color: #777;border-left: 4px solid #ddd;}hr {background-color: #ddd;border: 0;height: 1px;margin: 15px 0;}code {font-family: Menlo, Consolas, 'Ubuntu Mono', Monaco, 'source-code-pro', monospace;line-height: 1.4;margin: 0;padding: 0.2em 0;font-size: 85%;background-color: rgba(0,0,0,0.04);border-radius: 3px;}pre > code {margin: 0;padding: 0;font-size: 100%;word-break: normal;background: transparent;border: 0;}ol {list-style-type: decimal;}ol ol, ul ol {list-style-type: lower-latin;}ol ol ol, ul ol ol, ul ul ol, ol ul ol {list-style-type: lower-roman;}table {border-spacing: 0;border-collapse: collapse;margin-top: 0;margin-bottom: 16px;}table th {font-weight: bold;}table th, table td {padding: 6px 13px;border: 1px solid #ddd;}table tr {border-top: 1px solid #ccc;}table tr:nth-child(even) {background-color: #f8f8f8;}input[type="checkbox"] {cursor: default;margin-right: 0.5em;font-size: 13px;}.task-list-item {list-style-type: none;}.task-list-item+.task-list-item {margin-top: 3px;}.task-list-item input {float: left;margin: 0.3em 1em 0.25em -1.6em;vertical-align: middle;}#tag-field {margin: 8px 2px 10px;}#tag-field .tag {display: inline-block;background: #cadff3;border-radius: 4px;padding: 1px 8px;color: black;font-size: 12px;margin-right: 10px;line-height: 1.4;}</style>
+  <!-- ace-static.css -->
+  <style>.ace_static_highlight {white-space: pre-wrap;}.ace_static_highlight .ace_gutter {width: 2em;text-align: right;padding: 0 3px 0 0;margin-right: 3px;}.ace_static_highlight.ace_show_gutter > .ace_line {padding-left: 2.6em;}.ace_static_highlight .ace_line {position: relative;}.ace_static_highlight .ace_gutter-cell {-moz-user-select: -moz-none;-khtml-user-select: none;-webkit-user-select: none;user-select: none;top: 0;bottom: 0;left: 0;position: absolute;}.ace_static_highlight .ace_gutter-cell:before {content: counter(ace_line, decimal);counter-increment: ace_line;}.ace_static_highlight {counter-reset: ace_line;}</style>
+  <style>.ace-monokai .ace_gutter {background: #2F3129;color: #8F908A}.ace-monokai .ace_print-margin {width: 1px;background: #555651}.ace-monokai {background-color: #272822;color: #F8F8F2}.ace-monokai .ace_cursor {color: #F8F8F0}.ace-monokai .ace_marker-layer .ace_selection {background: #49483E}.ace-monokai.ace_multiselect .ace_selection.ace_start {box-shadow: 0 0 3px 0px #272822;}.ace-monokai .ace_marker-layer .ace_step {background: rgb(102, 82, 0)}.ace-monokai .ace_marker-layer .ace_bracket {margin: -1px 0 0 -1px;border: 1px solid #49483E}.ace-monokai .ace_marker-layer .ace_active-line {background: #202020}.ace-monokai .ace_gutter-active-line {background-color: #272727}.ace-monokai .ace_marker-layer .ace_selected-word {border: 1px solid #49483E}.ace-monokai .ace_invisible {color: #52524d}.ace-monokai .ace_entity.ace_name.ace_tag,.ace-monokai .ace_keyword,.ace-monokai .ace_meta.ace_tag,.ace-monokai .ace_storage {color: #F92672}.ace-monokai .ace_punctuation,.ace-monokai .ace_punctuation.ace_tag {color: #fff}.ace-monokai .ace_constant.ace_character,.ace-monokai .ace_constant.ace_language,.ace-monokai .ace_constant.ace_numeric,.ace-monokai .ace_constant.ace_other {color: #AE81FF}.ace-monokai .ace_invalid {color: #F8F8F0;background-color: #F92672}.ace-monokai .ace_invalid.ace_deprecated {color: #F8F8F0;background-color: #AE81FF}.ace-monokai .ace_support.ace_constant,.ace-monokai .ace_support.ace_function {color: #66D9EF}.ace-monokai .ace_fold {background-color: #A6E22E;border-color: #F8F8F2}.ace-monokai .ace_storage.ace_type,.ace-monokai .ace_support.ace_class,.ace-monokai .ace_support.ace_type {font-style: italic;color: #66D9EF}.ace-monokai .ace_entity.ace_name.ace_function,.ace-monokai .ace_entity.ace_other,.ace-monokai .ace_entity.ace_other.ace_attribute-name,.ace-monokai .ace_variable {color: #A6E22E}.ace-monokai .ace_variable.ace_parameter {font-style: italic;color: #FD971F}.ace-monokai .ace_string {color: #E6DB74}.ace-monokai .ace_comment {color: #75715E}.ace-monokai .ace_indent-guide {background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAYAAACZgbYnAAAAEklEQVQImWPQ0FD0ZXBzd/wPAAjVAoxeSgNeAAAAAElFTkSuQmCC) right repeat-y}</style>
+  <!-- export.css -->
+  <style>
+    body{margin:0 auto;max-width:800px;line-height:1.4}
+    #nav{margin:5px 0 10px;font-size:15px}
+    #titlearea{border-bottom:1px solid #ccc;font-size:17px;padding:10px 0;}
+    #contentarea{font-size:15px;margin:16px 0}
+    .cell{outline:0;min-height:20px;margin:5px 0;padding:5px 0;}
+    .code-cell{font-family:Menlo,Consolas,'Ubuntu Mono',Monaco,'source-code-pro',monospace;font-size:12px;}
+    .latex-cell{white-space:pre-wrap;}
+  </style>
+  <!-- User CSS -->
+  <style> .text-cell {font-size: 15px;}.code-cell {font-size: 12px;}.markdown-cell {font-size: 15px;}.latex-cell {font-size: 15px;}</style>
+</head>
+<body>
+  <div id="nav"><div>Next: <a href='08) Tricks.html'>08) Tricks</a>, Previous: <a href='06) Stock UTIL.html'>06) Stock UTIL</a>, Up: <a href='index.html'>Index</a></div></div>
+  <div id="titlearea">
+    <h2>07) Intro to Ks</h2>
+  </div>
+  <div id="contentarea"><div class="cell markdown-cell"><h2 id="topic">Topic</h2>
+<p><em>What Are Ks and how do I use them?</em></p>
+</div><div class="cell markdown-cell"><h2 id="lecture">Lecture</h2>
+<ul>
+<li>Def of Kritik<ul>
+<li>A criticism of something that the AFF does</li><li>Related to oppression, or concedental philosophy</li></ul>
+</li><li>Parts<ul>
+<li>Link<ul>
+<li>What the AFF Does that's bad</li><li>No uniqueness because problems exist in the status quo</li></ul>
+</li><li>Impact<ul>
+<li>What the bad thing is</li><li>Bad things that happened</li><li>Pro Fiat: Something that happens after you pass the AFF</li><li>Pre Fiat: Something that happens before you pass the NEG</li><li>Can be abut what the AFF does or Topic</li></ul>
+</li><li>Alternative<ul>
+<li>Something to do instead of the resolution because has less harms</li><li>Resolves the K</li><li>Doesn't link to K unless policy</li><li>Solves impact</li><li>Weakest part of a K</li></ul>
+</li><li>Framework / Role of Ballot<ul>
+<li>Something that makes your impacts matter</li><li>Role of the Ballot<ul>
+<li>Judge has obligation to pay attention / vote off certain issues</li><li>prefiat</li><li>critical pedagodgy<ul>
+<li>How do things in capitalist society influence how teachers teach</li></ul>
+</li><li>Examples<ul>
+<li>Endorse the best strategy to combat anti-blackness</li></ul>
+</li><li>Role of the ballot &gt; framework</li><li>Reps 1st - epistemlogical<ul>
+<li>Prior to the affects of a plan</li><li>The K comes first because we need to rethink before assessing</li><li>We need to examine racial biases</li></ul>
+</li><li>ROB vs theory<ul>
+<li>Depends on K</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li><li>Kinds<ul>
+<li>Performance<ul>
+<li>Represenation Ks<ul>
+<li>How the AFF makes broad generalizations about groups</li><li>How you represent people and problems in a round</li></ul>
+</li><li>Discourse Ks<ul>
+<li>Something you do in a round</li><li>ex. saying a racial slur</li></ul>
+</li></ul>
+</li><li>Common<ul>
+<li>Cap K<ul>
+<li>captialism is bad</li></ul>
+</li><li>Security K</li><li>Race Ks<ul>
+<li>Wilderson</li></ul>
+</li><li>Stake Ks<ul>
+<li>state is bad</li></ul>
+</li><li>Imperalism K</li><li>Feminism Ks</li></ul>
+</li></ul>
+</li><li>K AFFs<ul>
+<li>Role of the Ballot</li><li>Advocacy</li><li>Impacts</li><li>AFF Solves</li></ul>
+</li><li>Answering Ks<ul>
+<li>Permutation<ul>
+<li>Do both</li><li>You're claiming extinction, reject the logic of security</li></ul>
+</li><li>Alt doesn't solve or makes problem worse<ul>
+<li>We lack a tangible way of getting rid of capitalism</li></ul>
+</li><li>Link Turn or Impact Turn<ul>
+<li>Reverses the Link</li><li>Impact is good</li></ul>
+</li><li>No link<ul>
+<li>I'm not racist/capitalist...</li></ul>
+</li><li>Aff Outweighs<ul>
+<li>Why the AFF is more important than the K's impact</li></ul>
+</li><li>Answer ROB<ul>
+<li>We should care about pragmatic solutions rather than philosophical concepts</li></ul>
+</li></ul>
+</li><li>Write State Ks or security ks</li></ul>
+</div></div>
+  <script>document.body.onkeyup = function(e) {
+if (e.keyCode === 39) window.location.href = '08) Tricks.html';
+if (e.keyCode === 37) window.location.href = '06) Stock UTIL.html';
+}</script>
+</body>
+</html>

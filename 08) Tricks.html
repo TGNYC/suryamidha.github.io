@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- common.css -->
+  <style>* {-webkit-tap-highlight-color: rgba(0,0,0,0);}html {-webkit-text-size-adjust: none;}body {font-family: Arial, Helvetica, sans-serif;margin: 0;color: #333;word-wrap: break-word;}h1, h2, h3, h4, h5, h6 {line-height: 1.1;}img {max-width: 100% !important;}blockquote {margin: 0;padding: 0 15px;color: #777;border-left: 4px solid #ddd;}hr {background-color: #ddd;border: 0;height: 1px;margin: 15px 0;}code {font-family: Menlo, Consolas, 'Ubuntu Mono', Monaco, 'source-code-pro', monospace;line-height: 1.4;margin: 0;padding: 0.2em 0;font-size: 85%;background-color: rgba(0,0,0,0.04);border-radius: 3px;}pre > code {margin: 0;padding: 0;font-size: 100%;word-break: normal;background: transparent;border: 0;}ol {list-style-type: decimal;}ol ol, ul ol {list-style-type: lower-latin;}ol ol ol, ul ol ol, ul ul ol, ol ul ol {list-style-type: lower-roman;}table {border-spacing: 0;border-collapse: collapse;margin-top: 0;margin-bottom: 16px;}table th {font-weight: bold;}table th, table td {padding: 6px 13px;border: 1px solid #ddd;}table tr {border-top: 1px solid #ccc;}table tr:nth-child(even) {background-color: #f8f8f8;}input[type="checkbox"] {cursor: default;margin-right: 0.5em;font-size: 13px;}.task-list-item {list-style-type: none;}.task-list-item+.task-list-item {margin-top: 3px;}.task-list-item input {float: left;margin: 0.3em 1em 0.25em -1.6em;vertical-align: middle;}#tag-field {margin: 8px 2px 10px;}#tag-field .tag {display: inline-block;background: #cadff3;border-radius: 4px;padding: 1px 8px;color: black;font-size: 12px;margin-right: 10px;line-height: 1.4;}</style>
+  <!-- ace-static.css -->
+  <style>.ace_static_highlight {white-space: pre-wrap;}.ace_static_highlight .ace_gutter {width: 2em;text-align: right;padding: 0 3px 0 0;margin-right: 3px;}.ace_static_highlight.ace_show_gutter > .ace_line {padding-left: 2.6em;}.ace_static_highlight .ace_line {position: relative;}.ace_static_highlight .ace_gutter-cell {-moz-user-select: -moz-none;-khtml-user-select: none;-webkit-user-select: none;user-select: none;top: 0;bottom: 0;left: 0;position: absolute;}.ace_static_highlight .ace_gutter-cell:before {content: counter(ace_line, decimal);counter-increment: ace_line;}.ace_static_highlight {counter-reset: ace_line;}</style>
+  <style>.ace-monokai .ace_gutter {background: #2F3129;color: #8F908A}.ace-monokai .ace_print-margin {width: 1px;background: #555651}.ace-monokai {background-color: #272822;color: #F8F8F2}.ace-monokai .ace_cursor {color: #F8F8F0}.ace-monokai .ace_marker-layer .ace_selection {background: #49483E}.ace-monokai.ace_multiselect .ace_selection.ace_start {box-shadow: 0 0 3px 0px #272822;}.ace-monokai .ace_marker-layer .ace_step {background: rgb(102, 82, 0)}.ace-monokai .ace_marker-layer .ace_bracket {margin: -1px 0 0 -1px;border: 1px solid #49483E}.ace-monokai .ace_marker-layer .ace_active-line {background: #202020}.ace-monokai .ace_gutter-active-line {background-color: #272727}.ace-monokai .ace_marker-layer .ace_selected-word {border: 1px solid #49483E}.ace-monokai .ace_invisible {color: #52524d}.ace-monokai .ace_entity.ace_name.ace_tag,.ace-monokai .ace_keyword,.ace-monokai .ace_meta.ace_tag,.ace-monokai .ace_storage {color: #F92672}.ace-monokai .ace_punctuation,.ace-monokai .ace_punctuation.ace_tag {color: #fff}.ace-monokai .ace_constant.ace_character,.ace-monokai .ace_constant.ace_language,.ace-monokai .ace_constant.ace_numeric,.ace-monokai .ace_constant.ace_other {color: #AE81FF}.ace-monokai .ace_invalid {color: #F8F8F0;background-color: #F92672}.ace-monokai .ace_invalid.ace_deprecated {color: #F8F8F0;background-color: #AE81FF}.ace-monokai .ace_support.ace_constant,.ace-monokai .ace_support.ace_function {color: #66D9EF}.ace-monokai .ace_fold {background-color: #A6E22E;border-color: #F8F8F2}.ace-monokai .ace_storage.ace_type,.ace-monokai .ace_support.ace_class,.ace-monokai .ace_support.ace_type {font-style: italic;color: #66D9EF}.ace-monokai .ace_entity.ace_name.ace_function,.ace-monokai .ace_entity.ace_other,.ace-monokai .ace_entity.ace_other.ace_attribute-name,.ace-monokai .ace_variable {color: #A6E22E}.ace-monokai .ace_variable.ace_parameter {font-style: italic;color: #FD971F}.ace-monokai .ace_string {color: #E6DB74}.ace-monokai .ace_comment {color: #75715E}.ace-monokai .ace_indent-guide {background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAYAAACZgbYnAAAAEklEQVQImWPQ0FD0ZXBzd/wPAAjVAoxeSgNeAAAAAElFTkSuQmCC) right repeat-y}</style>
+  <!-- export.css -->
+  <style>
+    body{margin:0 auto;max-width:800px;line-height:1.4}
+    #nav{margin:5px 0 10px;font-size:15px}
+    #titlearea{border-bottom:1px solid #ccc;font-size:17px;padding:10px 0;}
+    #contentarea{font-size:15px;margin:16px 0}
+    .cell{outline:0;min-height:20px;margin:5px 0;padding:5px 0;}
+    .code-cell{font-family:Menlo,Consolas,'Ubuntu Mono',Monaco,'source-code-pro',monospace;font-size:12px;}
+    .latex-cell{white-space:pre-wrap;}
+  </style>
+  <!-- User CSS -->
+  <style> .text-cell {font-size: 15px;}.code-cell {font-size: 12px;}.markdown-cell {font-size: 15px;}.latex-cell {font-size: 15px;}</style>
+</head>
+<body>
+  <div id="nav"><div>Next: <a href='09) Obligations of AFF and NEG.html'>09) Obligations of AFF and NEG</a>, Previous: <a href='07) Intro to Ks.html'>07) Intro to Ks</a>, Up: <a href='index.html'>Index</a></div></div>
+  <div id="titlearea">
+    <h2>08) Tricks</h2>
+  </div>
+  <div id="contentarea"><div class="cell markdown-cell"><h2 id="topic">Topic</h2>
+<p><em>What are tricks?</em></p>
+</div><div class="cell markdown-cell"><h2 id="lecture">Lecture</h2>
+<ul>
+<li>Def of Tricks<ul>
+<li>Small arguments with disproportionately big payoffs<ul>
+<li>Worst thing to do against tricky debater is not being vigiliant</li><li>If the impact of argument is far greater than length, most likely tricks</li></ul>
+</li><li>Tricks debaters are not lazy<ul>
+<li>You need to be on your toes for new tricks</li></ul>
+</li><li>Why do people run tricks?<ul>
+<li>They're really strategic<ul>
+<li>Automatic ballot in a few sentences</li><li>How to identify</li><li>Have a game plan of what to do in round and afterwords</li><li>People are bad at responding to tricfks<ul>
+<li>They try to line by line argument</li><li>Get someone to timesuck into stupid arguments</li><li>More time to explain why false than explain in the first place</li><li>Don't realize they're encountering a bad time tradeoff</li><li>People who are good at philosophy or Ks are suckered into making long response to argument</li></ul>
+</li><li>Nuance your arguments for good tradeoffs</li></ul>
+</li></ul>
+</li></ul>
+</li><li>Different types of tricks<ul>
+<li>Mythical A priori<ul>
+<li>Popular 2008 to 2010</li><li>People have figures out ways to uplayer</li><li>A priori<ul>
+<li>Gain offense independent from the standard</li><li>posessed = evil demon, low investment</li></ul>
+</li><li>Skepticism<ul>
+<li>Common in framework arguments</li><li>Lot of common assumptions that make it easy to run skepticism</li><li>Ex. All objects are just one object</li><li>No moral truth behind resolution, so it couldn't be true</li></ul>
+</li></ul>
+</li><li>Spikes<ul>
+<li>Defensive arguments that bundle offenses by AFF</li><li>Ex. UTIL can't be used</li><li>Short interp argument that gains a lot of time out of opponent</li><li>Spikes should be placed on a round to round basis for strategy</li></ul>
+</li><li>Burdens<ul>
+<li>You have to jump through hoops to get to burden</li><li>Burdens are very dense </li><li>This burden is the most fair interp of the resolution</li><li>Very difficult to explain why unfair</li><li>Narrow the debate down to a singular issue you're most prepped on</li><li>Win offense back to the burden</li></ul>
+</li><li>Continguencies<ul>
+<li>If skep is true, all statments are true</li></ul>
+</li><li>Theory<ul>
+<li>Paragraph Theory</li><li>Must run counterplan, must meet xyz conditions</li><li>Run in undeview of a lot of UTIL AFF</li><li>interpreted many ways</li></ul>
+</li><li>Positively framed resolutions<ul>
+<li>Limit the negative straategy</li></ul>
+</li><li>Shells with embedded voters <ul>
+<li>independent voter in theory shells</li><li>Very easily win the theory debate</li></ul>
+</li></ul>
+</li><li>Running Tricks<ul>
+<li>Making sure that you have really good extensions<ul>
+<li>Explain why the evidence writes the ballot</li><li>Judges won't like tricks, but will vote on it</li></ul>
+</li><li>Stay Fresh<ul>
+<li>Don't recycle arguments</li><li>Change argument slightly for new fresh implications</li></ul>
+</li><li>Don't be obvious<ul>
+<li>Want to catch people not paying attention</li></ul>
+</li><li>Tell them they're not allowed ot use examples you provide<ul>
+<li>Trick will narrow down to best, most obvious one</li><li>Preclude them from arguments that would be responsive to the AFF</li></ul>
+</li><li>Prepare for peers<ul>
+<li>Require debaters to debate what they don't have much prep on</li></ul>
+</li></ul>
+</li><li>How to Refute Tricks<ul>
+<li>Refuting A priori<ul>
+<li>Underdevelped, no warrant</li><li>Impact Turn<ul>
+<li>Turned 3 nibs</li></ul>
+</li></ul>
+</li><li>Skepticism<ul>
+<li>Oppressive</li><li>Punished really hard for running position</li><li>Skep can't be resolved, show how your framework resolves</li><li>More risk<ul>
+<li>philosophic outlayering</li></ul>
+</li><li>Fiats<ul>
+<li>Pre fiats come before skep</li></ul>
+</li><li>Theory<ul>
+<li>Punish opponent for going for it</li></ul>
+</li></ul>
+</li><li>Spikes<ul>
+<li>Only reply to Spikes if you need to</li><li>Meta Theory<ul>
+<li>Interp, violation, etc...</li><li>Must case is shell format</li><li>Win on time tradeoff</li></ul>
+</li><li>Constrained by fairness/education</li><li>Prep counter interps</li></ul>
+</li><li>Burdens<ul>
+<li>If something is wrong with burden, your interp should win the round<ul>
+<li>Have to get good with theory</li></ul>
+</li><li>Pick your battles<ul>
+<li>Strategic to engage them on the burden</li></ul>
+</li></ul>
+</li><li>Contingencies<ul>
+<li>XYZ thing is a problem, will try and resolve it</li><li>Why is there a problem in the first place?</li><li>There's no relevancy...</li><li>I solve the problem!</li><li>The problem doesn't matter as much as this problem</li></ul>
+</li><li>Theory<ul>
+<li>Metatheory</li><li>Ks<ul>
+<li>Deny ability to access theory arguments</li></ul>
+</li><li>Or, run both Ks and metatheory. </li><li>Vote on nibs</li><li>Turn every argument on opponent</li></ul>
+</li></ul>
+</li></ul>
+</div></div>
+  <script>document.body.onkeyup = function(e) {
+if (e.keyCode === 39) window.location.href = '09) Obligations of AFF and NEG.html';
+if (e.keyCode === 37) window.location.href = '07) Intro to Ks.html';
+}</script>
+</body>
+</html>
